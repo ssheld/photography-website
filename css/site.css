@@ -1,0 +1,734 @@
+/****** Debugging CSS ******/
+/* * {
+    outline: 1px solid red;
+} */
+.debug-red {
+    border: 2px solid red;
+}
+
+.debug-blue {
+    border: 2px solid blue;
+}
+
+
+/****** Default color styling for page ******/
+html,
+body {
+    background-color: black;
+    /* Code below fixes scroll bounce while maintaining pull to refresh
+    /* on mobile versions of chrome */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+     /* Temporary solution to disable IOS double tap zoom on the gallery */
+     /* scrollbar. Need to figure out how to disable it just on that element */
+    touch-action: manipulation;
+
+    /* Fixes overscroll behavior in desktop Safari */
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /* End fixes overscroll behavior in desktop Safari */
+
+    /* Hide scroller for the 3 people still using IE */
+    -ms-overflow-style: none;
+    
+    /* test code below, not sure it works, check later */
+    -webkit-overflow-scrolling: touch; 
+
+}
+
+
+footer, header, nav {
+    background-color: transparent !important;
+}
+
+/****** Body styling ******/
+body {
+    margin: 0;
+    /* baseline EM size */
+    font-size: 16px;
+    /* Code below fixes scroll bounce while maintaining pull to refresh
+    /* on mobile versions of chrome */
+    overflow-y: hidden;
+}
+
+/** Reset user agent styled sheet for paragraph padding and margin **/
+p {
+    padding: 0;
+    margin: 0;
+}
+
+/** Navigation link styling **/
+a {
+    color: rgb(255, 255, 255); 
+    text-decoration: none; /* Remove default styling for links */
+}
+
+a:hover {
+     cursor: pointer; /* Default - change cursor to pointer on link hover */
+    /* -webkit-opacity: 0.8;
+    -moz-opacity: 0.8;
+    opacity: .8; Change opacity of links on hover */
+}
+
+/* Remove outline if we hover a link that has one (usually only if tabbed on a link) */
+a:hover, a:active {
+    outline: none; 
+}
+
+/* reset default padding and margins to 0 for cross browser compatibility */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/****** Heading Styling ******/
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700; 
+    font-style: normal;
+    line-height: 1.2em;
+    text-transform: none; 
+    letter-spacing: 0px;
+    color: rgb(255,255,255);
+}
+
+h1 a, h2 a, h3 a {
+    color: rgb(255,255,255);
+}
+
+/****** Paragraph styling ******/
+p {
+    font-family: 'Roboto' arial;
+    font-size: 16px;
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: 0px;
+    color: rgb(255,255,255);
+}
+
+/****** Footer styling ******/
+
+footer {
+
+}
+
+/****** Class Selectors ******/
+
+/* Container for all items in body tag */
+.body-container { 
+    background-color: rgb(17,17,17);
+}
+
+.header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Using 90% width to match body-container because .header has absolute positioning */
+    padding-top: .8em;
+    max-width: 100%;    
+    max-height: 100vh;
+    justify-content: space-between;
+    /* For sticky header */
+    position: fixed;
+    top: 0;
+    z-index: 4;
+    background-color: transparent;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    font-style: normal;
+    font-family: 'Breve Title Medium', 'Roboto', sans-serif;
+    text-transform: capitalize;
+    line-height: 1em;
+    color: rgb(255,255,255);
+    white-space: nowrap;
+    margin: 0 0 0 1.8rem;
+}
+
+.logo a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.desktop-nav {
+    margin-right: 1.5rem;
+}
+
+/*Styling for main nav links */
+.desktop-nav a {
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 1.18px;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    line-height: 1.5em;
+    display: block;
+    padding-left: 2.5em; 
+    color: rgb(255,255,255);
+}
+
+/* Underline nav links on hover */
+.desktop-nav a:hover {
+    text-decoration: underline;
+}
+
+/* .nav-list is the list styling for .desktop-nav */
+/* By default do not display desktop-nav          */
+.nav-list {
+    display: none;
+}
+
+/* Layout for .nav-list ul */
+.nav-list a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.nav-list img {
+    width: 1.5em;
+    height: 1.5em;
+
+}
+
+a.target-burger {
+    /* margin: 1.125em; */
+    margin-right: 1.5rem;
+    width: 3.25em;
+    height: 3.25em;
+    position: relative;
+    display: block;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+ }
+
+a.target-burger.toggled ul.buns li.bun {
+    -webkit-transform: rotate(45deg) translateZ(0);
+    transform: rotate(45deg) translateZ(0);
+}
+
+a.target-burger.toggled ul.buns li.bun:last-child {
+    -webkit-transform: rotate(-45deg) translateZ(0);
+    transform: rotate(-45deg) translateZ(0);
+}
+
+a.target-burger ul.buns {
+    width: 1.625em;
+    height: 1.625em;
+    list-style: none;
+    /* Below is the original margin*/
+    /* margin: -0.8125em 0 0 -0.8125em; */
+    /* Below is the new margin v2 */
+    /* margin: -0.6em 0 0 -.2em; */
+    /* newest margin below v3, stil broken in firefox/IE, FIX THIS */
+    margin-top: -0.5em;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: -webkit-transform 600ms cubic-bezier(0.23, 1, 0.32, 1), color 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1), color 1s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    color: #fff;
+}
+
+a.target-burger ul.buns li.bun {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    /* original margin below which was cutting off one of the buns in IE */
+    /* margin-top: -0.75px; */
+    margin-top: -.25em;
+    -webkit-transform: translateY(-3.75px) translateZ(0);
+    transform: translateY(-3.75px) translateZ(0);
+    -webkit-transition: -webkit-transform 600ms cubic-bezier(0.23, 1, 0.32, 1), background-color 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 600ms cubic-bezier(0.23, 1, 0.32, 1), background-color 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+a.target-burger ul.buns li.bun:last-child {
+    -webkit-transform: translateY(3.75px) translateZ(0);
+    transform: translateY(3.75px) translateZ(0);
+}
+
+/* The side navigation menu */
+.mobile-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    visibility: hidden; /* initially hide mobile nav - change with JS */
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    height: 0; /* 0 Initial height - change with JS */
+    width: 100%; /* 100% Full-weidth */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Stay on top of z-index */
+    top: 0; /* Stay at the top */
+    background-color: rgb(17,17,17); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: scroll; /* If device is super small and content overflows on y-axis then add scroll bar */
+    /* padding-top: 90px; Place content 90px from the top due to fixed header */
+    transition: 600ms; /* 0.5 second transition effect to slide in the top nav */
+    padding: 0 0;  /* INVESTIGATE WHY THIS IS NECESSARY */
+}
+
+/* About me text in the mobile nav menu */
+.mobile-nav p {
+    font-size: .85em;
+    flex-shrink: 0; /* Necessary for IE to not overlap other items in menu onto about me section */
+    display: block;
+    padding-top: 7em;
+    padding-bottom: 1em;
+    width: 90%;
+    margin-left: 1rem;
+}
+
+/* The navigation menu links */
+.mobile-nav a {
+    text-decoration: none;
+    color: rgb(255,255,255);
+    display: inline-block;
+    transition: 0.3s;
+    margin-left: 1rem;
+}
+
+/* Underline mobile menu nav links on hover */
+.mobile-nav a:hover {
+    text-decoration: underline;
+} 
+
+.mobile-nav h2 {
+    font-size: 1.2em;
+    color: rgb(255,255,255);
+    display: block;
+    transition: 0.3s;
+    padding: 1.5em 0 1em 0;
+    margin: 0;
+    flex-shrink: 0;
+
+}
+
+#featured-gallery { 
+    position: absolute;
+    top: 0; 
+    left: 0;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    /* 0 line-height so that button and gallery title don't overlap */
+    line-height: 0;
+}
+
+/* Linear gradient to cover featured gallery image */
+#featured-gallery:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.4+0,0+30,0+55,0.4+100 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(30%,rgba(0,0,0,0)), color-stop(55%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome4-9,Safari4-5 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -o-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.4) 100%); /* Opera 11.10-11.50 */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.4) 100%); /* IE10 preview */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
+  z-index: 1;
+}
+
+
+#featured-gallery-image { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    position: absolute;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.view-featured-gallery-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-content: flex-start;
+
+    height: 4rem;
+    /* Prevent the container from overflowing the page     */
+    /* as this causes issue with scrollbar appearing in IE */
+    width: calc(100% - 1.8rem);
+    position: relative;
+    top: 68%;
+    left: 1.8rem;
+    line-height: normal;
+    z-index: 2;
+}
+
+.featured-gallery-title {
+    flex: 1 0 40%;
+    display: block;
+    font-family: 'roboto', sans-serif;
+    font-size: 2.2em;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: white;
+    padding-bottom: 1rem;
+}
+
+.view-gallery-btn {
+    flex: 1 0 60%;
+    display: block;
+    border: 2px solid white;
+    border-radius: 2px;
+    width: 9.5em;
+    height: 3.8em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-content: center;
+}
+
+.view-gallery-btn-inner {
+    display: block;
+    font-size: .9em;
+    font-family: 'roboto', sans-serif;
+    margin: auto;
+}
+
+/* Change opacity when hovering over view gallery button */
+.view-gallery-btn:hover {
+    opacity: .8;
+}
+
+#gallery-nav-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    max-width: 100%;
+    min-height: 9rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Gotta get rid of default IE line-height otherwise scroll nav is buggy in IE */
+    line-height: 0;
+    background-color: rgb(255,255,255);
+    z-index: 2;
+   
+    /* For WebKit implementations, provide inertia scrolling */
+    /* -webkit-overflow-scrolling: touch; */
+}
+
+/* Do not display scrollbar */
+#gallery-nav-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.card {
+    /* relative position is necessary to prevent flex-items from overlapping */
+    /* on window resize */
+    position: relative;
+    flex: 1 0 auto;
+    width: auto;
+    min-width: 10rem;
+    height: 100%;
+    padding-top: .6rem;
+    padding-left: 1rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;  
+}
+
+.card:last-child {
+    padding-right: 1rem;
+}
+
+.card:hover {
+    opacity: .8;
+}
+
+.card-title {
+    flex: 1 0 20%;
+    font-size: .8em;
+    font-weight: 500;
+    letter-spacing: 0px;
+    margin: 0;
+    color: rgb(0,0,0);
+    cursor: pointer;
+}
+
+.card img {
+    flex: 1 0 80%;
+    height: 80%;
+    min-height: 0;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    cursor: pointer;
+}
+
+
+/****** CSS for Story pages ******/
+
+/* .story-figure is a figure containing story image and figure caption */
+.story-figure {
+    margin: 0;
+    padding: 0 0 3em 0;
+    height: 100%; /* necessary for IE */
+}
+
+.story-image-caption {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 300; 
+    font-style: normal;
+    line-height: 1.6em;
+    text-transform: none;
+    text-align: left; 
+    letter-spacing: 0px;
+    color: rgb(255,255,255);
+    padding-top: .7em; 
+
+}
+
+#story-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+
+/****** ID Selectors ******/
+
+
+
+/****** Feature Based Media Queries ******/
+
+
+
+/****** Mobile Responsive Media Queries ******/
+
+
+
+/* Add media query to adjust based on orientation */
+
+/* Use media queries based on layout, not on device, see
+   when your layout starts to break */
+
+@media (min-width: 768px)
+{
+    /* Show desktop nav */
+    .desktop-nav {
+        display: block;
+    }
+    /* Style the desktop nav */
+    .nav-list {
+        list-style:none!important;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    /* Remove mobile nav hamburger menu */
+    a.target-burger,
+    ul.buns,
+    li.bun {
+        display: none;
+    }
+
+    /* Adjust story page figure caption font size */
+    /* .story-image-caption {
+        font-size: 1.1em;
+    } */
+   /* Adjust story page title's font size */ 
+    /* #story-title {
+        font-size: 1.3em;
+    } */
+}
+
+
+/* At 580px implement desktop nav */
+@media (min-width: 800px) {
+    
+
+    .desktop-nav {
+        display: block; 
+    }
+
+    .nav-list {
+        list-style:none!important;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    /* .logo a {
+        font-size: 28px;
+    } */
+    /* .logo-subtitle {
+        display: block;
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 0px;
+        font-style: normal;
+        font-family: 'Roboto', sans-serif;
+        text-transform: capitalize;
+        line-height: 1em;
+        color: rgb(255,255,255);
+        white-space: nowrap;
+        margin-top: 0;
+    } */
+
+    /* Remove all elements of mobile navigation */
+    a.target-burger,
+    ul.buns,
+    li.bun {
+        display: none;
+    }
+}
+
+@media (min-width: 1000px) {
+   
+
+
+}
+
+@media (min-width: 1200px) {
+
+    /* .logo a {
+        font-size: 1.5em;
+    }
+
+    .desktop-nav a {
+        font-size: 1.1em;
+    }
+
+    .gallery-nav h3 {
+        font-size: 1em;
+        padding-top: .6em;
+        padding-bottom: 2.3em;
+    } */
+
+    /* Adjust story page figure caption font size */
+       /* .story-image-caption {
+        font-size: 1.2em;
+    } */
+   /* Adjust story page title's font size */ 
+    /* #story-title {
+        font-size: 1.5em;
+    } */
+}
+
+@media (min-width: 1500px) {
+  
+
+    .logo a {
+    }
+
+    .desktop-nav a {
+    }
+
+    .gallery-nav h3 {
+       
+    }
+}
+
+@media (min-width: 1800px) {
+
+
+    .logo a {
+    }
+
+   
+
+    .gallery-nav h3 {
+        
+    }
+}
+
+
+@media (min-width: 2200px) {
+    .logo a {
+    }
+
+    .desktop-nav a {
+    }
+
+    .gallery-nav h3 {
+       
+    }
+}
+
+
