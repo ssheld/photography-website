@@ -424,7 +424,6 @@ a.target-burger ul.buns li.bun:last-child {
 
 .view-gallery-btn {
     flex: 1 0 60%;
-    display: block;
     border: 2px solid white;
     border-radius: 2px;
     width: 9.5em;
@@ -444,10 +443,8 @@ a.target-burger ul.buns li.bun:last-child {
 }
 
 .view-gallery-btn-inner {
-    display: block;
     font-size: .9em;
     font-family: 'roboto', sans-serif;
-    margin: auto;
 }
 
 /* Change opacity when hovering over view gallery button */
