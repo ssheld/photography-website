@@ -20,23 +20,24 @@ var defaultSwiper = {
     mousewheelControl: true,
     slidesPerView: 'auto',
     preventClicks: false,
+    freeModeMomentumBounce: false,
+    // preventClicks: false,
+    /* Necessary to prevent clicking on nav image from redirecting url */
+    watchOverflow: true,
+    preventClicksPropagation: false,
     scrollbar: {
         hide: false,
         grabCursor: true,
     },
     on: {
         init: function (){
-            console.log("INITIALIZED");
         },
         reachEnd: function (){
-            console.log("AT END OF SWIPER");
-            mySwiper.update();
         },
         scroll: function (){
-            console.log("scrolling");
+            mySwiper.update();
         },
         resize: function (){
-            console.log("RESIZING");
         }
     }
 };
@@ -47,21 +48,26 @@ $(document).ready(function(){
 
     mySwiper = new Swiper('.swiper-container', defaultSwiper);
     mySwiper.mousewheel.enable();
-
-    /* If window is resized then we need to update the swiper */
+        /* If window is resized then we need to update the swiper */
     /* container so that it is the correct size NOT WORKING IN IE AND DONT THINK IT"S WORKING CORRECTLY IN SAFARI */
     $(window).resize(function(){
         mySwiper.update();
     });
 
     /* Change Featured Story image based on click */
-    $('.card img').click(function(){
+    $('.card > a').click(function(e){
+        // /* Prevent click from opening up the gallery */
+        e.preventDefault();
         /* Change featured gallery image to that of image clicked */
-        document.getElementById("featured-gallery-image").src = this.src;
+        document.getElementById("featured-gallery-image").src = $(this).children('img').attr('src');
+
+        /* Change the view gallery link */
+        document.getElementsByClassName(".view-featured-gallery-container a").href = this.getAttribute('href');
+
         /* Change featured gallery title to that of image clicked */
         $('.featured-gallery-title').text($(this).attr('title'));    
+       
     });
-
 
 
     /* Code for hamburger menu */
