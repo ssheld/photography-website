@@ -4,8 +4,8 @@ $(window).on('load', function() {
     /* Polyfill featured image so object-fit works with IE */
     var featuredImg = document.querySelector('#featured-gallery-image');
     objectFitImages(featuredImg);
-
-    var galleryImgs = document.querySelectorAll('.card img');
+    /* Polyfill nav images so object-fit works with IE */
+    var galleryImgs = document.querySelectorAll('.gallery-nav-item img');
     objectFitImages(galleryImgs);
 
 });
@@ -54,19 +54,25 @@ $(document).ready(function(){
         mySwiper.update();
     });
 
+
+
+
+    /****** Add Event Listeners ******/
+
     /* Change Featured Story image based on click */
-    $('.card > a').click(function(e){
-        // /* Prevent click from opening up the gallery */
+    $('.gallery-nav-item > a').click(function(e){
+        /* Prevent click from opening up the gallery */
         e.preventDefault();
+
+        console.log("HERE 1\n");
         /* Change featured gallery image to that of image clicked */
-        document.getElementById("featured-gallery-image").src = $(this).children('img').attr('src');
+        document.getElementById('featured-gallery-image').src = $(this).children('img').attr('src');
 
         /* Change the view gallery link */
-        document.getElementsByClassName(".view-featured-gallery-container a").href = this.getAttribute('href');
+        document.getElementById('view-gallery-btn').href = $(this).attr('href');
 
         /* Change featured gallery title to that of image clicked */
-        $('.featured-gallery-title').text($(this).attr('title'));    
-       
+        $('#featured-gallery-title').text($(this).attr('title'));       
     });
 
 
@@ -115,6 +121,3 @@ $(document).ready(function(){
         }
     });
 });
-
-
-
