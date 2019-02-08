@@ -274,6 +274,7 @@ a.target-burger ul.buns li.bun:last-child {
 /* About me text in the mobile nav menu */
 .mobile-nav p {
     font-size: .85rem;
+    line-height: 1.2em;
     color: rgb(255,255,255);
     flex-shrink: 0; /* Necessary for IE to not overlap other items in menu onto about me section */
     display: block;
@@ -514,8 +515,6 @@ a.target-burger ul.buns li.bun:last-child {
     cursor: pointer;
 }
 
-
-
 /****** Mobile Landscape Orientation Media Queries ******/
 
 @media only screen and (orientation:landscape) {
@@ -547,7 +546,6 @@ a.target-burger ul.buns li.bun:last-child {
         top: 65%;
     }
 }
-
 
 @media (min-width: 768px) {
     .header {
@@ -602,9 +600,16 @@ a.target-burger ul.buns li.bun:last-child {
         font-size: 1.4rem;
         padding-left: 2rem;
     }
+
+    .nav-list img {
+        width: 1.8rem;
+        height: 1.8rem;
+    
+    }
+
     .logo {
         font-size: 2rem;
-        margin: 0 0 0 3.4rem;
+        margin: 0 0 0 5.4rem;
     }
 
     #view-featured-gallery-container {
@@ -612,7 +617,7 @@ a.target-burger ul.buns li.bun:last-child {
         /* as this causes issue with scrollbar appearing in IE */
         width: calc(100% - 3.4rem);
         left: 3.4rem;
-        top: 72%;
+        /* top: 72%; */
     }
     #featured-gallery-title {
         font-size: 3.4rem;
@@ -651,14 +656,14 @@ a.target-burger ul.buns li.bun:last-child {
     }
     .logo {
         font-size: 2.2rem;
-        margin: 0 0 0 4rem;
+        margin: 0 0 0 4.5rem;
     }
 
     #view-featured-gallery-container {
         /* Prevent the container from overflowing the page     */
         /* as this causes issue with scrollbar appearing in IE */
-        width: calc(100% - 4rem);
-        left: 4rem;
+        width: calc(100% - 4.5rem);
+        left: 4.5rem;
     }
     #featured-gallery-title {
         font-size: 4.5rem;
@@ -669,5 +674,3 @@ a.target-burger ul.buns li.bun:last-child {
         font-size: 1rem;
     }
 }
-
-
