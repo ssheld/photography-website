@@ -46,36 +46,36 @@ var defaultSwiper = {
 var mobileToggleState = 0;
 $(document).ready(function(){
     
-    // /* Polyfill featured image so object-fit works with IE */
-    // var featuredImg = document.querySelector('#featured-gallery-image');
-    // objectFitImages(featuredImg);
-    // /* Polyfill nav images so object-fit works with IE */
-    // var galleryImgs = document.querySelectorAll('.gallery-nav-item img');
-    // objectFitImages(galleryImgs);
+    /* Check if we're on the landing page */
+    if (window.location.pathname == '/' ){
 
-    mySwiper = new Swiper('.swiper-container', defaultSwiper);
-    mySwiper.mousewheel.enable();
+        /* Make our fixed header transparent */
+        $(".header").css('background-color', 'transparent');
+
+        mySwiper = new Swiper('.swiper-container', defaultSwiper);
+        mySwiper.mousewheel.enable();
         /* If window is resized then we need to update the swiper */
-    /* container so that it is the correct size NOT WORKING IN IE AND DONT THINK IT"S WORKING CORRECTLY IN SAFARI */
-    $(window).resize(function(){
-        mySwiper.update();
-    });
+        /* container so that it is the correct size NOT WORKING IN IE AND DONT THINK IT"S WORKING CORRECTLY IN SAFARI */
+        $(window).resize(function(){
+            mySwiper.update();
+        });
 
-    /* Change Featured Story image based on click */
-    $('.gallery-nav-item > a').click(function(e){
-        /* Prevent click from opening up the gallery */
-        e.preventDefault();
+        /* Change Featured Story image based on click */
+        $('.gallery-nav-item > a').click(function(e){
+            /* Prevent click from opening up the gallery */
+            e.preventDefault();
 
-        /* Change featured gallery image to that of image clicked */
-        document.getElementById('featured-gallery-image').src = $(this).children('img').attr('src');
+            /* Change featured gallery image to that of image clicked */
+            document.getElementById('featured-gallery-image').src = $(this).children('img').attr('src');
 
-        /* Change the view gallery link */
-        document.getElementById('view-gallery-btn').href = $(this).attr('href');
+            /* Change the view gallery link */
+            document.getElementById('view-gallery-btn').href = $(this).attr('href');
 
-        /* Change featured gallery title to that of image clicked */
-        $('#featured-gallery-title').text($(this).attr('title'));       
-    });
+            /* Change featured gallery title to that of image clicked */
+            $('#featured-gallery-title').text($(this).attr('title'));       
+        });
 
+    }
 
     /* Code for hamburger menu */
 	$('a.target-burger').click(function(e){

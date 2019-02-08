@@ -14,7 +14,7 @@
 /****** Default color styling for page ******/
 html,
 body {
-    background-color: black;
+    background-color: rgb(17,17,17);
     /* Code below fixes scroll bounce while maintaining pull to refresh
     /* on mobile versions of chrome */
     overflow-y: auto;
@@ -36,7 +36,7 @@ body {
 }
 
 
-footer, header, nav {
+footer, nav {
     background-color: transparent !important;
 }
 
@@ -47,15 +47,8 @@ body {
     font-size: 16px;
     /* Code below fixes scroll bounce while maintaining pull to refresh
     /* on mobile versions of chrome */
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
-
-/** Reset user agent styled sheet for paragraph padding and margin **/
-p {
-    padding: 0;
-    margin: 0;
-}
-
 
 /** FACT:
 /** The average lifespan of a Quokka is 10 years.
@@ -109,15 +102,12 @@ p {
     font-style: normal;
     letter-spacing: 0px;
     color: rgb(255,255,255);
+    padding: 0;
+    margin: 0;
 }
 
 
 /****** Class Selectors ******/
-
-/* Container for all items in body tag */
-.body-container { 
-    background-color: rgb(17,17,17);
-}
 
 .header {
     display: -webkit-box;
@@ -135,7 +125,7 @@ p {
     position: fixed;
     top: 0;
     z-index: 4;
-    background-color: transparent;
+    background-color: rgb(17, 17, 17);
 }
 
 
@@ -450,7 +440,7 @@ a.target-burger ul.buns li.bun:last-child {
     line-height: 0;
     background-color: rgb(255,255,255);
     z-index: 2;
-    padding-bottom: .4rem;
+    padding-bottom: 1.4rem;
    
     /* For WebKit implementations, provide inertia scrolling */
     -webkit-overflow-scrolling: touch; 
@@ -461,6 +451,13 @@ a.target-burger ul.buns li.bun:last-child {
     display: none;
 }
 
+/* FACT: 
+* Quokkas survive on leaves and grass, but they don’t actually chew their food – they simply
+* rip out vegetation, stuff it into their mouths, and swallow. This isn’t a good way of breaking 
+* down food, nor an efficient way of extracting nutrients from it. So, quokkas have a unique solution – they’ll 
+* regurgitate their food and eat it again. Since the cud they regurgitate is a lot more processed, their digestive 
+* systems can better extract the vital nutrients from it the second time around.
+*/
 
 .gallery-nav-item {
     /* relative position is necessary to prevent flex-items from overlapping */
@@ -515,6 +512,63 @@ a.target-burger ul.buns li.bun:last-child {
     cursor: pointer;
 }
 
+
+
+
+/****** CSS for about.html ******/
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    overflow: auto;
+    z-index: 2;
+    height: 100%;
+}
+
+.about-container-left {
+    /* flex: 1 0 60%; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.about-container-left h3 {
+    font-size: 1.4rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+
+}
+
+.about-container-left p {
+    font-size: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+
+
+}
+
+
+.about-container-right {
+    /* flex: 1 0 40%;
+    width: 40%; */
+    padding-bottom: 2rem;
+}
+
+.about-container-right img {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    width: 100%;
+}
+
+
+
 /****** Mobile Landscape Orientation Media Queries ******/
 
 @media only screen and (orientation:landscape) {
@@ -550,6 +604,7 @@ a.target-burger ul.buns li.bun:last-child {
 @media (min-width: 768px) {
     .header {
         padding-top: 2.2rem;
+        padding-bottom: 1rem;
     }
     /* Show desktop nav */
     .desktop-nav {
@@ -633,7 +688,7 @@ a.target-burger ul.buns li.bun:last-child {
         font-size: 1.2rem;
 
     }
-
+    
     .gallery-title {
         font-size: .9rem;
     }
@@ -670,7 +725,15 @@ a.target-burger ul.buns li.bun:last-child {
         padding-bottom: 1.8rem;
     }
 
+
+
     .gallery-title {
         font-size: 1rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    #gallery-nav-container {
+        padding-bottom: 1rem;
     }
 }
