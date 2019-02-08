@@ -593,7 +593,7 @@ a.target-burger ul.buns li.bun:last-child {
 /* Remove bottom padding from gallery nav bar on mobile (on desktop link path preview can cover gallery nav titles) */
 @media only screen {
     #gallery-nav-container {
-        padding-bottom: 0;
+        padding-bottom: .6rem;
     }
 }
 
