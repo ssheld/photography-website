@@ -255,15 +255,14 @@ a.target-burger ul.buns li.bun:last-child {
     z-index: 3; /* Stay on top of z-index */
     top: 0; /* Stay at the top */
     background-color: rgb(17,17,17); /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    overflow-y: scroll; /* If device is super small and content overflows on y-axis then add scroll bar */
+    overflow: hidden;
     transition: 600ms; /* 0.5 second transition effect to slide in the top nav */
     padding: 0 0;  /* INVESTIGATE WHY THIS IS NECESSARY */
 }
 
 /* About me text in the mobile nav menu */
 .mobile-nav p {
-    font-size: .85rem;
+    font-size: .86rem;
     line-height: 1.2em;
     color: rgb(255,255,255);
     flex-shrink: 0; /* Necessary for IE to not overlap other items in menu onto about me section */
@@ -532,6 +531,7 @@ a.target-burger ul.buns li.bun:last-child {
 
 .about-container-left h3 {
     font-size: 1.4rem;
+    font-weight: 500;
     width: 100%;
     margin: 0 auto;
     padding-top: 2rem;
@@ -540,7 +540,7 @@ a.target-burger ul.buns li.bun:last-child {
 }
 
 .about-container-left p {
-    font-size: 1rem;
+    font-size: .86rem;
     width: 100%;
 }
 
@@ -593,7 +593,7 @@ a.target-burger ul.buns li.bun:last-child {
 /* Remove bottom padding from gallery nav bar on mobile (on desktop link path preview can cover gallery nav titles) */
 @media only screen {
     #gallery-nav-container {
-        padding-bottom: .6rem;
+        padding-bottom: .5rem;
     }
 }
 

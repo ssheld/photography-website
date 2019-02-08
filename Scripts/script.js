@@ -15,7 +15,7 @@ $(document).ready(function(){
             mobileToggleState = 0;
 
             /* Add scroll bar back to body */
-            $('body').css('overflow', 'visible');
+            $('body').css('overflow-y', 'auto');
             
         }
         else{
@@ -42,7 +42,7 @@ $(document).ready(function(){
                 $('div.mobile-nav, a.target-burger').toggleClass('toggled');
 
                 /* Add scroll bar back to body */
-                $('body').css('overflow', 'visible');
+                $('body').css('overflow-y', 'auto');
             }
             if($('a.target-burger').is('visible')){
                 $('a.target-burger').toggleClass('toggled');
