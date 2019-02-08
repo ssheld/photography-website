@@ -1,5 +1,6 @@
 
 
+
 $(window).on('load', function() {    
     /* Polyfill featured image so object-fit works with IE */
     var featuredImg = document.querySelector('#featured-gallery-image');
@@ -9,7 +10,6 @@ $(window).on('load', function() {
     objectFitImages(galleryImgs);
 
 });
-
 
 var defaultSwiper = {
     direction: 'horizontal',
@@ -45,6 +45,13 @@ var defaultSwiper = {
 /* variable to keep track of toggle state of hamburger menu */
 var mobileToggleState = 0;
 $(document).ready(function(){
+    
+    // /* Polyfill featured image so object-fit works with IE */
+    // var featuredImg = document.querySelector('#featured-gallery-image');
+    // objectFitImages(featuredImg);
+    // /* Polyfill nav images so object-fit works with IE */
+    // var galleryImgs = document.querySelectorAll('.gallery-nav-item img');
+    // objectFitImages(galleryImgs);
 
     mySwiper = new Swiper('.swiper-container', defaultSwiper);
     mySwiper.mousewheel.enable();
@@ -54,17 +61,11 @@ $(document).ready(function(){
         mySwiper.update();
     });
 
-
-
-
-    /****** Add Event Listeners ******/
-
     /* Change Featured Story image based on click */
     $('.gallery-nav-item > a').click(function(e){
         /* Prevent click from opening up the gallery */
         e.preventDefault();
 
-        console.log("HERE 1\n");
         /* Change featured gallery image to that of image clicked */
         document.getElementById('featured-gallery-image').src = $(this).children('img').attr('src');
 

@@ -56,6 +56,11 @@ p {
     margin: 0;
 }
 
+
+/** FACT:
+/** The average lifespan of a Quokka is 10 years.
+**/
+
 /** Navigation link styling **/
 a {
     color: rgb(255, 255, 255); 
@@ -87,7 +92,6 @@ h1, h2, h3 {
     font-size: 16px;
     font-weight: 700; 
     font-style: normal;
-    line-height: 1.2em;
     text-transform: none; 
     letter-spacing: 0px;
     color: rgb(255,255,255);
@@ -123,7 +127,7 @@ p {
     align-items: center;
     justify-content: space-between;
     width: 100%; /* Using 90% width to match body-container because .header has absolute positioning */
-    padding-top: .8em;
+    padding-top: .8rem;
     max-width: 100%;    
     max-height: 100vh;
     justify-content: space-between;
@@ -136,7 +140,7 @@ p {
 
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 1.5px;
     font-style: normal;
@@ -145,7 +149,7 @@ p {
     line-height: 1em;
     color: rgb(255,255,255);
     white-space: nowrap;
-    margin: 0 0 0 1.8rem;
+    margin: 0 0 0 1rem;
 }
 
 .logo a {
@@ -160,15 +164,15 @@ p {
 
 /*Styling for main nav links */
 .desktop-nav a {
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 400;
     letter-spacing: 1.18px;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
     text-transform: capitalize;
     line-height: 1.5em;
     display: block;
-    padding-left: 2.5em; 
+    padding-left: 2.5rem; 
     color: rgb(255,255,255);
 }
 
@@ -183,26 +187,14 @@ p {
     display: none;
 }
 
-/* Layout for .nav-list ul */
-.nav-list a {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
 .nav-list img {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.5rem;
+    height: 1.5rem;
 
 }
 
 a.target-burger {
-    /* margin: 1.125em; */
-    margin-right: 1.5rem;
+    margin-right: 1.8rem;
     width: 3.25em;
     height: 3.25em;
     position: relative;
@@ -227,11 +219,6 @@ a.target-burger ul.buns {
     width: 1.625em;
     height: 1.625em;
     list-style: none;
-    /* Below is the original margin*/
-    /* margin: -0.8125em 0 0 -0.8125em; */
-    /* Below is the new margin v2 */
-    /* margin: -0.6em 0 0 -.2em; */
-    /* newest margin below v3, stil broken in firefox/IE, FIX THIS */
     margin-top: -0.5em;
     padding: 0;
     position: absolute;
@@ -250,8 +237,6 @@ a.target-burger ul.buns li.bun {
     background-color: #fff;
     position: absolute;
     top: 50%;
-    /* original margin below which was cutting off one of the buns in IE */
-    /* margin-top: -0.75px; */
     margin-top: -.25em;
     -webkit-transform: translateY(-3.75px) translateZ(0);
     transform: translateY(-3.75px) translateZ(0);
@@ -282,21 +267,20 @@ a.target-burger ul.buns li.bun:last-child {
     background-color: rgb(17,17,17); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     overflow-y: scroll; /* If device is super small and content overflows on y-axis then add scroll bar */
-    /* padding-top: 90px; Place content 90px from the top due to fixed header */
     transition: 600ms; /* 0.5 second transition effect to slide in the top nav */
     padding: 0 0;  /* INVESTIGATE WHY THIS IS NECESSARY */
 }
 
 /* About me text in the mobile nav menu */
 .mobile-nav p {
-    font-size: .85em;
+    font-size: .85rem;
     color: rgb(255,255,255);
     flex-shrink: 0; /* Necessary for IE to not overlap other items in menu onto about me section */
     display: block;
-    padding-top: 7em;
-    padding-bottom: 1em;
+    padding-top: 7rem;
+    padding-bottom: 1rem;
     width: 90%;
-    margin-left: 1.8rem;
+    margin-left: 1rem;
 }
 
 /* The navigation menu links */
@@ -305,7 +289,7 @@ a.target-burger ul.buns li.bun:last-child {
     color: rgb(255,255,255);
     display: inline-block;
     transition: 0.3s;
-    margin-left: 1.8rem;
+    margin-left: 1rem;
 }
 
 /* Underline mobile menu nav links on hover */
@@ -318,7 +302,7 @@ a.target-burger ul.buns li.bun:last-child {
     color: rgb(255,255,255);
     display: block;
     transition: 0.3s;
-    padding: 1.5em 0 1em 0;
+    padding: 1.5rem 0 1rem 0;
     margin: 0;
     flex-shrink: 0;
 
@@ -392,35 +376,33 @@ a.target-burger ul.buns li.bun:last-child {
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-content: flex-start;
-
-    height: 4rem;
     /* Prevent the container from overflowing the page     */
     /* as this causes issue with scrollbar appearing in IE */
-    width: calc(100% - 1.8rem);
+    width: calc(100% - 1rem);
     position: relative;
-    top: 68%;
-    left: 1.8rem;
+    top: 65%;
+    left: 1rem;
     line-height: normal;
     z-index: 2;
+    height: 20rem;
 }
 
 #featured-gallery-title {
-    flex: 1 0 40%;
     font-family: 'roboto', sans-serif;
-    font-size: 2.2em;
+    font-size: 2rem;
     font-weight: 500;
     letter-spacing: 0px;
     color: white;
+    margin: 0;
     padding-bottom: 1rem;
+
 }
 
 #view-gallery-btn {
-    flex: 1 0 60%;
-    min-height: 0;
     border: 2px solid white;
     border-radius: 2px;
     width: 9.5em;
-    /* height: 3.8em; */
+    height: 2.5rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -436,8 +418,9 @@ a.target-burger ul.buns li.bun:last-child {
 }
 
 #view-gallery-btn-inner {
-    font-size: .9em;
+    font-size: .9rem;
     font-family: 'roboto', sans-serif;
+    font-weight: 500;
 }
 
 /* Change opacity when hovering over view gallery button */
@@ -466,6 +449,7 @@ a.target-burger ul.buns li.bun:last-child {
     line-height: 0;
     background-color: rgb(255,255,255);
     z-index: 2;
+    padding-bottom: .4rem;
    
     /* For WebKit implementations, provide inertia scrolling */
     -webkit-overflow-scrolling: touch; 
@@ -512,10 +496,9 @@ a.target-burger ul.buns li.bun:last-child {
 
 .gallery-title {
     flex: 1 0 20%;
-    font-size: .8em;
+    font-size: .8rem;
     font-weight: 500;
     letter-spacing: 0px;
-    margin: 0;
     color: rgb(0,0,0);
     cursor: pointer;
 }
@@ -533,56 +516,43 @@ a.target-burger ul.buns li.bun:last-child {
 
 
 
-/****** CSS for Story pages ******/
+/****** Mobile Landscape Orientation Media Queries ******/
 
-/* BELOW CODE IS CURRENTLY NOT IMPLEMENTED. PLEASE IGNORE */
-/* .story-figure is a figure containing story image and figure caption */
-/* .story-figure {
-    margin: 0;
-    padding: 0 0 3em 0;
-    height: 100%;  necessary for IE 
-} */
+@media only screen and (orientation:landscape) {
+    
+    #view-featured-gallery-container {
+        top: 40%;
+    }
+    #featured-gallery-title {
+        font-size: 2rem;
+    }
+    
+    #view-gallery-btn {
+        width: 9rem;
+    }
+    
+    #view-gallery-btn-inner {
+        font-size: 1em;
+    }
 
-/* .story-image-caption {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    font-weight: 300; 
-    font-style: normal;
-    line-height: 1.6em;
-    text-transform: none;
-    text-align: left; 
-    letter-spacing: 0px;
-    color: rgb(255,255,255);
-    padding-top: .7em; 
+    #featured-gallery-image { 
+        object-position: bottom;
+        font-family: 'object-fit: cover; object-position: bottom;';
+    }
+ }
 
-} */
-
-/* #story-title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1em;
-    font-weight: 400;
-} */
-
-
-/****** ID Selectors ******/
-
+ @media only screen and (orientation:landscape) and (min-device-width: 715px) {
+    
+    #view-featured-gallery-container {
+        top: 65%;
+    }
+}
 
 
-/****** Feature Based Media Queries ******/
-
-
-
-/****** Mobile Responsive Media Queries ******/
-
-
-
-/* Add media query to adjust based on orientation */
-
-/* Use media queries based on layout, not on device, see
-   when your layout starts to break */
-
-@media (min-width: 768px)
-{
+@media (min-width: 768px) {
+    .header {
+        padding-top: 2.2rem;
+    }
     /* Show desktop nav */
     .desktop-nav {
         display: block;
@@ -604,108 +574,99 @@ a.target-burger ul.buns li.bun:last-child {
     li.bun {
         display: none;
     }
+
+    .logo {
+        font-size: 1.7rem;
+        margin: 0 0 0 2.2rem;
+    }
+
+    #view-featured-gallery-container {
+        /* Prevent the container from overflowing the page     */
+        /* as this causes issue with scrollbar appearing in IE */
+        width: calc(100% - 2.2rem);
+        left: 2.2rem;
+        top: 70%;
+    }
+    #featured-gallery-title {
+        font-size: 3rem;
+    }
 }
 
-
-/* At 580px implement desktop nav */
-@media (min-width: 800px) {
-    
+@media (min-width: 1023px) {
 
     .desktop-nav {
-        display: block; 
-    }
-
-    .nav-list {
-        list-style:none!important;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-    }
-
-    /* .logo a {
-        font-size: 28px;
-    } */
-
-    /* Remove all elements of mobile navigation */
-    a.target-burger,
-    ul.buns,
-    li.bun {
-        display: none;
-    }
-}
-
-@media (min-width: 1000px) {
-   
-
-
-}
-
-@media (min-width: 1200px) {
-
-    /* .logo a {
-        font-size: 1.5em;
+        padding-right: 2.5rem;
     }
 
     .desktop-nav a {
-        font-size: 1.1em;
+        font-size: 1.4rem;
+        padding-left: 2rem;
+    }
+    .logo {
+        font-size: 2rem;
+        margin: 0 0 0 3.4rem;
     }
 
-    .gallery-nav h3 {
-        font-size: 1em;
-        padding-top: .6em;
-        padding-bottom: 2.3em;
-    } */
+    #view-featured-gallery-container {
+        /* Prevent the container from overflowing the page     */
+        /* as this causes issue with scrollbar appearing in IE */
+        width: calc(100% - 3.4rem);
+        left: 3.4rem;
+        top: 72%;
+    }
+    #featured-gallery-title {
+        font-size: 3.4rem;
+        padding-bottom: 1.2rem;
+    }
+    
+    #view-gallery-btn {
+        width: 12rem;
+        height: 3.3rem;
+    }
 
-    /* Adjust story page figure caption font size */
-       /* .story-image-caption {
-        font-size: 1.2em;
-    } */
-   /* Adjust story page title's font size */ 
-    /* #story-title {
-        font-size: 1.5em;
-    } */
+    #view-gallery-btn-inner {
+        font-size: 1.2rem;
+
+    }
+
+    .gallery-title {
+        font-size: .9rem;
+    }
+
+    #featured-gallery-image { 
+        object-position: 100% 70%;
+        font-family: 'object-fit: cover; object-position: 100% 70%;';
+    }
 }
 
 @media (min-width: 1500px) {
-  
 
-    .logo a {
+    .desktop-nav {
+        padding-right: 5rem;
     }
 
     .desktop-nav a {
+        font-size: 1.5rem;
+        padding-left: 4rem;
+    }
+    .logo {
+        font-size: 2.2rem;
+        margin: 0 0 0 4rem;
     }
 
-    .gallery-nav h3 {
-       
+    #view-featured-gallery-container {
+        /* Prevent the container from overflowing the page     */
+        /* as this causes issue with scrollbar appearing in IE */
+        width: calc(100% - 4rem);
+        left: 4rem;
     }
-}
-
-@media (min-width: 1800px) {
-
-
-    .logo a {
-    }
-
-   
-
-    .gallery-nav h3 {
-        
-    }
-}
-
-
-@media (min-width: 2200px) {
-    .logo a {
+    #featured-gallery-title {
+        font-size: 4.5rem;
+        padding-bottom: 1.8rem;
     }
 
-    .desktop-nav a {
-    }
-
-    .gallery-nav h3 {
-       
+    .gallery-title {
+        font-size: 1rem;
     }
 }
 
