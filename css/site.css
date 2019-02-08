@@ -511,16 +511,13 @@ a.target-burger ul.buns li.bun:last-child {
     cursor: pointer;
 }
 
-
-
-
 /****** CSS for about.html ******/
 
 .about-container {
     height: 100%;
     width: 80%;
     margin: 0 auto;
-    padding-top: 3rem;
+    margin-top: 3rem;
 }
 
 .about-container-left {
@@ -548,6 +545,7 @@ a.target-burger ul.buns li.bun:last-child {
 .about-container-right {
     padding-bottom: 1rem;
     width: 100%;
+    max-width: 50rem;
 }
 
 .about-container-right img {
@@ -605,7 +603,9 @@ a.target-burger ul.buns li.bun:last-child {
     /* Show desktop nav */
     .desktop-nav {
         display: block;
+        padding-right: 1.2rem;
     }
+
     /* Style the desktop nav */
     .nav-list {
         list-style:none!important;
@@ -639,6 +639,33 @@ a.target-burger ul.buns li.bun:last-child {
     #featured-gallery-title {
         font-size: 3rem;
     }
+
+    /****** About page media queries ******/
+    .about-container {
+        margin-top: 5rem;
+    }
+    
+    .about-container-left {
+        padding-bottom: 2.5rem;
+    }
+    
+    .about-container-left h3 {
+        font-size: 1.6rem;
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+    
+    }
+    
+    .about-container-left p {
+        font-size: 1rem;
+    }
+    
+    
+    .about-container-right {
+        padding-bottom: 2rem;
+    }
+    
+
 }
 
 @media (min-width: 1023px) {
@@ -660,7 +687,7 @@ a.target-burger ul.buns li.bun:last-child {
 
     .logo {
         font-size: 2rem;
-        margin: 0 0 0 5.4rem;
+        margin: 0 0 0 2.4rem;
     }
 
     #view-featured-gallery-container {
@@ -668,8 +695,8 @@ a.target-burger ul.buns li.bun:last-child {
         /* as this causes issue with scrollbar appearing in IE */
         width: calc(100% - 3.4rem);
         left: 3.4rem;
-        /* top: 72%; */
     }
+
     #featured-gallery-title {
         font-size: 3.4rem;
         padding-bottom: 1.2rem;
@@ -692,6 +719,35 @@ a.target-burger ul.buns li.bun:last-child {
     #featured-gallery-image { 
         object-position: 100% 70%;
         font-family: 'object-fit: cover; object-position: 100% 70%;';
+    }
+
+    /****** About page media queries ******/
+    .about-container {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin-top: 10rem;
+    }
+
+    .about-container-left {
+        padding-bottom: 0;
+        margin-top: 4rem;
+        margin-right: 2.8rem;
+    }
+
+    .about-container-left h3 {
+        font-size: 1.7rem;
+        padding-top: 2rem;
+        padding-bottom: 1.6rem;
+
+    }
+
+    .about-container-left p {
+        font-size: 1.1rem;
+    }
+
+    .about-container-right {
+        padding-bottom: 0;
     }
 }
 
@@ -721,10 +777,14 @@ a.target-burger ul.buns li.bun:last-child {
         padding-bottom: 1.8rem;
     }
 
-
-
     .gallery-title {
         font-size: 1rem;
+    }
+
+
+    /****** About page media queries ******/
+    .about-container {
+        width: 80%;
     }
 }
 
@@ -732,4 +792,9 @@ a.target-burger ul.buns li.bun:last-child {
     #gallery-nav-container {
         padding-bottom: 1rem;
     }
+
+    .about-container-left p {
+        width: 80%;
+    }
+
 }
