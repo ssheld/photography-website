@@ -49,9 +49,6 @@ $(document).ready(function(){
     /* Check if we're on the landing page */
     if (window.location.pathname == '/' ){
 
-        /* Make our fixed header transparent */
-        $(".header").css('background-color', 'transparent');
-
         mySwiper = new Swiper('.swiper-container', defaultSwiper);
         mySwiper.mousewheel.enable();
         /* If window is resized then we need to update the swiper */
@@ -75,6 +72,10 @@ $(document).ready(function(){
             $('#featured-gallery-title').text($(this).attr('title'));       
         });
 
+    }
+    else {
+        /* Make our fixed header transparent */
+        $(".header").css('background-color', 'transparent');
     }
 
     /* Code for hamburger menu */

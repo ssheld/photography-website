@@ -125,7 +125,7 @@ p {
     position: fixed;
     top: 0;
     z-index: 4;
-    background-color: rgb(17, 17, 17);
+    background-color: transparent;
 }
 
 
@@ -559,6 +559,7 @@ a.target-burger ul.buns li.bun:last-child {
     /* flex: 1 0 40%;
     width: 40%; */
     padding-bottom: 2rem;
+    overflow: hidden;
 }
 
 .about-container-right img {
