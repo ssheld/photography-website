@@ -125,7 +125,7 @@ p {
     position: fixed;
     top: 0;
     z-index: 4;
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 
@@ -587,6 +587,13 @@ a.target-burger ul.buns li.bun:last-child {
     
     #view-featured-gallery-container {
         top: 65%;
+    }
+}
+
+/* Remove bottom padding from gallery nav bar on mobile (on desktop link path preview can cover gallery nav titles) */
+@media only screen {
+    #gallery-nav-container {
+        padding-bottom: 0;
     }
 }
 
