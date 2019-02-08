@@ -75,7 +75,7 @@ $(document).ready(function(){
     }
     else {
         /* Make our fixed header transparent */
-        $(".header").css('background-color', 'transparent');
+        $(".header").css('background-color', 'rgb(17,17,17)');
     }
 
     /* Code for hamburger menu */
