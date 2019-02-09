@@ -498,6 +498,7 @@ a.target-burger ul.buns li.bun:last-child {
     letter-spacing: 0px;
     color: rgb(0,0,0);
     cursor: pointer;
+    text-align: center;
 }
 
 .gallery-nav-item img {
@@ -554,7 +555,42 @@ a.target-burger ul.buns li.bun:last-child {
     width: 100%;
 }
 
+/****** CSS for Gallery Pages ******/
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* margin: 0 auto; */
+}
 
+.gallery-container h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding-top: 3.8rem;
+    padding-bottom: .5rem;
+}
+
+
+.gallery-container figure {
+    /* reset margin and padding for figures */
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-container img{
+    width: 100%;
+}
+
+.image-caption {
+    font-family: 'Roboto' arial;
+    font-size: .86rem;
+    color: rgb(255,255,255);
+    padding: 1rem 1rem 2rem;
+    margin: 0 auto;
+}
 
 /****** Mobile Landscape Orientation Media Queries ******/
 
