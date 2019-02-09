@@ -563,7 +563,11 @@ a.target-burger ul.buns li.bun:last-child {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* margin: 0 auto; */
+}
+
+#aniimated-thumbnails {
+    width: 100%;
+    height: 100%;
 }
 
 .gallery-container h3 {
