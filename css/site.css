@@ -538,6 +538,7 @@ a.target-burger ul.buns li.bun:last-child {
 }
 
 .about-container-left p {
+    line-height: 1.5em;
     font-size: .86rem;
     width: 100%;
 }
@@ -563,6 +564,7 @@ a.target-burger ul.buns li.bun:last-child {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: 0 auto;
 }
 
 #aniimated-thumbnails {
@@ -573,8 +575,9 @@ a.target-burger ul.buns li.bun:last-child {
 .gallery-container h3 {
     font-size: 1.6rem;
     font-weight: 500;
-    padding-top: 3.8rem;
-    padding-bottom: .5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 1.5rem;
+    margin: 0;
 }
 
 
@@ -696,17 +699,27 @@ a.target-burger ul.buns li.bun:last-child {
         padding-bottom: 1.5rem;
     
     }
-    
+
     .about-container-left p {
         font-size: 1rem;
     }
-    
-    
+      
     .about-container-right {
         padding-bottom: 2rem;
     }
     
     /******* Gallery specific css ******/
+
+    .gallery-container {
+        width: 90%;
+    }
+
+    .gallery-container h3 {
+        font-size: 2.2rem;
+        padding-top: 6.5rem;
+        padding-bottom: 2rem;
+    }
+
     .image-caption {
         font-size: .9rem;
     }
@@ -794,6 +807,20 @@ a.target-burger ul.buns li.bun:last-child {
     .about-container-right {
         padding-bottom: 0;
     }
+
+    /****** Gallery Specific CSS ******/
+    .gallery-container {
+        width: 85%;
+    }
+
+    .gallery-container h3 {
+        font-size: 3rem;
+    }
+
+    .image-caption {
+        font-size: .92rem;
+        padding-bottom: 2.4rem;
+    }
 }
 
 @media (min-width: 1500px) {
@@ -832,6 +859,23 @@ a.target-burger ul.buns li.bun:last-child {
         width: 80%;
     }
 }
+@media (min-width: 1700px) {
+
+    /****** Gallery Specific CSS ******/
+
+    .gallery-container {
+        width: 70%;
+    }
+
+    .gallery-container h3 {
+        font-size: 3.4rem;
+    }
+
+    .image-caption {
+        font-size: .95rem;
+        padding: 1.4rem 1rem 3.6rem;
+    }
+}
 
 @media (min-width: 2000px) {
     #gallery-nav-container {
@@ -842,4 +886,19 @@ a.target-burger ul.buns li.bun:last-child {
         width: 80%;
     }
 
+    /****** Gallery Specific CSS ******/
+    .gallery-container {
+        width: 60%;
+    }
+
+    .image-caption {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 2400px) {
+    /****** Gallery Specific CSS ******/
+    .gallery-container {
+        width: 55%;
+    }
 }
