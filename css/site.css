@@ -263,7 +263,7 @@ a.target-burger ul.buns li.bun:last-child {
 /* About me text in the mobile nav menu */
 .mobile-nav p {
     font-size: .86rem;
-    line-height: 1.2em;
+    line-height: 1.5em;
     color: rgb(255,255,255);
     flex-shrink: 0; /* Necessary for IE to not overlap other items in menu onto about me section */
     display: block;
@@ -594,6 +594,7 @@ a.target-burger ul.buns li.bun:last-child {
     color: rgb(255,255,255);
     padding: 1rem 1rem 2rem;
     margin: 0 auto;
+    line-height: 1.5em;
 }
 
 /****** Mobile Landscape Orientation Media Queries ******/
@@ -705,6 +706,10 @@ a.target-burger ul.buns li.bun:last-child {
         padding-bottom: 2rem;
     }
     
+    /******* Gallery specific css ******/
+    .image-caption {
+        font-size: .9rem;
+    }
 
 }
 
