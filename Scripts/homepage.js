@@ -43,8 +43,15 @@ var defaultSwiper = {
 
 $(document).ready(function(){
     
-    /* Check if we're on the landing page */
-   
+    /* Pop up an alert window to let the user know that the page is currently under construction */
+    $.alert({
+        title: 'Hi there!',
+        content: 'My website is currently under construction. Please bare with me while development wraps up in the coming weeks. - Stephen',
+        theme: 'dark',
+        animationBounce: 2,
+        useBootstrap: false,
+        boxWidth: '200px',
+    });
 
     mySwiper = new Swiper('.swiper-container', defaultSwiper);
     mySwiper.mousewheel.enable();
