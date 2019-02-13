@@ -62,7 +62,7 @@ $(document).ready(function(){
     });
 
     /* Change Featured Story image based on click */
-    $('.gallery-nav-item > a').click(function(e){
+    $('.gallery-nav-item a').click(function(e){
         /* Prevent click from opening up the gallery */
         e.preventDefault();
 
