@@ -6,7 +6,6 @@ $(window).on('load', function() {
     /* Polyfill nav images so object-fit works with IE */
     var galleryImgs = document.querySelectorAll('.gallery-nav-item img');
     objectFitImages(galleryImgs);
-
 });
 
 var defaultSwiper = {
@@ -26,6 +25,10 @@ var defaultSwiper = {
     scrollbar: {
         hide: false,
         grabCursor: true,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'progressbar',
     },
     on: {
         init: function (){
