@@ -1,6 +1,3 @@
-
-
-
 /* variable to keep track of toggle state of hamburger menu */
 var mobileToggleState = 0;
 $(document).ready(function(){
